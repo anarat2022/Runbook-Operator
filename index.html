@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Runbook Operator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body data-view="dashboard">
+    <div class="background-glow glow-a"></div>
+    <div class="background-glow glow-b"></div>
+    <main class="page-shell">
+      <section class="hero panel">
+        <div class="hero-copy">
+          <p class="eyebrow">Notion MCP Hackathon Demo</p>
+          <h1>Runbook Operator turns Notion SOPs into approved action.</h1>
+          <p class="lede">
+            An approval-first agent for support operations. It pulls the right
+            runbook, drafts a safe execution plan, waits for human review, then
+            completes the task and writes the story back into Notion.
+          </p>
+          <div class="hero-actions">
+            <button id="reset-demo" class="button button-secondary">Reset Demo</button>
+            <a class="button button-primary" href="/portal" target="_blank" rel="noreferrer">Open Admin Portal</a>
+          </div>
+        </div>
+        <div class="stats-grid" id="stats-grid"></div>
+      </section>
+
+      <section class="content-grid">
+        <div class="panel composer">
+          <div class="section-header">
+            <p class="eyebrow">Create Job</p>
+            <h2>Intake request</h2>
+          </div>
+          <form id="job-form" class="job-form">
+            <label>
+              Requester
+              <input type="email" name="requester" value="ops@demo.dev" required>
+            </label>
+            <label>
+              Customer
+              <select name="customer_id" required>
+                <option value="cus_1001">Ava Johnson (`cus_1001`)</option>
+                <option value="cus_1002">Liam Chen (`cus_1002`)</option>
+                <option value="cus_1003">Sofia Patel (`cus_1003`)</option>
+              </select>
+            </label>
+            <label>
+              Order
+              <select name="order_id" required>
+                <option value="ord_301">ord_301</option>
+                <option value="ord_302">ord_302</option>
+                <option value="ord_303">ord_303</option>
+              </select>
+            </label>
+            <label>
+              Workflow
+              <select name="issue_type" required>
+                <option value="refund">Refund</option>
+                <option value="escalation">Escalation</option>
+                <option value="vip">VIP escalation</option>
+              </select>
+            </label>
+            <label>
+              Reason
+              <textarea name="reason" rows="4" required>Customer reported a duplicate charge and wants a fast resolution.</textarea>
+            </label>
+            <button type="submit" class="button button-primary">Generate Plan</button>
+          </form>
+        </div>
+
+        <div class="panel pitch">
+          <div class="section-header">
+            <p class="eyebrow">Workflow</p>
+            <h2>What the judges see</h2>
+          </div>
+          <ol class="flow-list">
+            <li>Search Notion MCP for the best runbook.</li>
+            <li>Fetch the SOP and generate a structured execution plan.</li>
+            <li>Write a job record into Notion with a pending approval state.</li>
+            <li>Human reviewer approves the plan.</li>
+            <li>Agent executes the workflow in the admin portal.</li>
+            <li>Results, evidence, and audit notes sync back to Notion.</li>
+          </ol>
+          <div class="tag-row">
+            <span class="tag">MCP-first</span>
+            <span class="tag">Human-in-the-loop</span>
+            <span class="tag">Demo-safe</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="board-grid">
+        <div class="panel">
+          <div class="section-header">
+            <p class="eyebrow">Runbooks</p>
+            <h2>Notion workspace</h2>
+          </div>
+          <div id="runbooks" class="card-list"></div>
+        </div>
+        <div class="panel">
+          <div class="section-header">
+            <p class="eyebrow">Jobs</p>
+            <h2>Approval queue</h2>
+          </div>
+          <div id="jobs" class="card-list"></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-header">
+          <p class="eyebrow">Audit Timeline</p>
+          <h2>Execution trail</h2>
+        </div>
+        <div id="audit-log" class="audit-list"></div>
+      </section>
+    </main>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
+

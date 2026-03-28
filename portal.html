@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Support Admin Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body data-view="portal">
+    <div class="background-glow glow-c"></div>
+    <main class="page-shell portal-shell">
+      <section class="hero panel compact-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Mock External System</p>
+          <h1>Support Admin Portal</h1>
+          <p class="lede">
+            This page plays the role of the external system the agent would
+            automate. Watch refund state, case status, and notes change as jobs run.
+          </p>
+        </div>
+        <a class="button button-primary" href="/" rel="noreferrer">Back to Operator</a>
+      </section>
+
+      <section class="panel">
+        <div class="section-header">
+          <p class="eyebrow">Customer Accounts</p>
+          <h2>Live portal state</h2>
+        </div>
+        <div id="portal-customers" class="card-list"></div>
+      </section>
+    </main>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
+
