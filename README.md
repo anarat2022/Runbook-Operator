@@ -48,9 +48,3 @@ The repo is intentionally wired so the live integration lives in one place: [`ru
 
 
 
-## Files for your submission
-
-- [`README.md`](/Users/anaratfatima/Documents/New%20project/README.md): project overview and setup
-- [`SUBMISSION.md`](/Users/anaratfatima/Documents/New%20project/SUBMISSION.md): ready-to-paste hackathon copy
-- [`NOTION_SETUP.md`](/Users/anaratfatima/Documents/New%20project/NOTION_SETUP.md): exact Notion schema and content
-
