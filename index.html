@@ -75,21 +75,20 @@
 
         <div class="panel pitch">
           <div class="section-header">
-            <p class="eyebrow">Workflow</p>
-            <h2>What the judges see</h2>
+            <p class="eyebrow">Operator Guardrails</p>
+            <h2>How this workflow stays safe</h2>
           </div>
           <ol class="flow-list">
-            <li>Search Notion MCP for the best runbook.</li>
-            <li>Fetch the SOP and generate a structured execution plan.</li>
-            <li>Write a job record into Notion with a pending approval state.</li>
-            <li>Human reviewer approves the plan.</li>
-            <li>Agent executes the workflow in the admin portal.</li>
-            <li>Results, evidence, and audit notes sync back to Notion.</li>
+            <li>Every request is mapped to a runbook before any action is taken.</li>
+            <li>Plans are generated first so a reviewer can inspect the exact next steps.</li>
+            <li>Irreversible actions stay blocked until a human approves the job.</li>
+            <li>Execution evidence is written into the job record for traceability.</li>
+            <li>Audit entries preserve what happened, when it happened, and why.</li>
           </ol>
           <div class="tag-row">
-            <span class="tag">MCP-first</span>
-            <span class="tag">Human-in-the-loop</span>
-            <span class="tag">Demo-safe</span>
+            <span class="tag">Approval-first</span>
+            <span class="tag">Policy-aware</span>
+            <span class="tag">Auditable</span>
           </div>
         </div>
       </section>
@@ -122,4 +121,3 @@
     <script src="{{ url_for('static', filename='app.js') }}"></script>
   </body>
 </html>
-
