@@ -46,9 +46,3 @@ We built a runbook-driven operator for support workflows. In this MVP, a support
 4. The operator executes the action in the admin portal.
 5. The result appears in the portal and the audit timeline updates.
 
-## Judging criteria alignment
-
-- Originality & Creativity: uses Notion as a real operational brain.
-- Technical Complexity: combines runbook retrieval, orchestration, approval, execution, and audit logging.
-- Use of Underlying Technology: explicitly designed around Notion MCP workflows and human-in-the-loop safety.
-
