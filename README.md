@@ -22,8 +22,8 @@ python3 app.py
 
 ### Then open:
 
-- [http://127.0.0.1:5000](http://127.0.0.1:5000)
-- [http://127.0.0.1:5000/portal](http://127.0.0.1:5000/portal)
+- [http://127.0.0.1:8000](http://127.0.0.1:8000)
+- [http://127.0.0.1:8000/portal](http://127.0.0.1:8000/portal)
 
 ### Architecture
 
